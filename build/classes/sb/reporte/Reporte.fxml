@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="436.0" prefWidth="747.0" style="-fx-background-color: #302F2F;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sb.reporte.ReporteController">
+   <children>
+      <TableView fx:id="table_clientes" layoutX="170.0" layoutY="78.0" prefHeight="344.0" prefWidth="538.0">
+        <columns>
+          <TableColumn fx:id="colHora" prefWidth="131.0" text="Hora de entrada" />
+          <TableColumn fx:id="colNombre" prefWidth="245.0" text="Nombre " />
+            <TableColumn fx:id="colFecha" prefWidth="161.0" text="Fecha" />
+        </columns>
+      </TableView>
+      <Button layoutX="45.0" layoutY="98.0" mnemonicParsing="false" onAction="#borrarHistorial" prefHeight="41.0" prefWidth="104.0" text="Borrar historial" />
+      <Label layoutX="264.0" layoutY="22.0" text="Historial del día" textFill="#e3ee07">
+         <font>
+            <Font name="System Italic" size="34.0" />
+         </font>
+      </Label>
+      <Button layoutX="45.0" layoutY="165.0" mnemonicParsing="false" onAction="#buscarHistorial" prefHeight="41.0" prefWidth="104.0" text="Buscar historial" />
+      <TextField fx:id="buscar" layoutX="14.0" layoutY="225.0" promptText="reporteYYYY-MM-DD" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="dist/lib/dpfpenrollment.jar"/>
+	<classpathentry kind="lib" path="dist/lib/dpfpverification.jar"/>
+	<classpathentry kind="lib" path="dist/lib/dpotapi.jar"/>
+	<classpathentry kind="lib" path="dist/lib/dpotjni.jar"/>
+	<classpathentry kind="lib" path="dist/lib/mysql-connector-java-5.1.23-bin.jar"/>
+	<classpathentry kind="lib" path="dist/run9900042/lib/dpfpenrollment.jar"/>
+	<classpathentry kind="lib" path="dist/run9900042/lib/dpfpverification.jar"/>
+	<classpathentry kind="lib" path="dist/run9900042/lib/dpotapi.jar"/>
+	<classpathentry kind="lib" path="dist/run9900042/lib/dpotjni.jar"/>
+	<classpathentry kind="lib" path="dist/run9900042/lib/mysql-connector-java-5.1.23-bin.jar"/>
+	<classpathentry kind="lib" path="dist/run9900042/SB.jar"/>
+	<classpathentry kind="lib" path="dist/SB.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>
