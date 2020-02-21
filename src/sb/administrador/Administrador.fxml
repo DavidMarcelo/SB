@@ -6,67 +6,127 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="607.0" prefWidth="937.0" style="-fx-background-color: #302F2F;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sb.administrador.AdministradorController">
-   <children>
-      <ImageView fitHeight="85.0" fitWidth="117.0" layoutX="8.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../imagenes/sb.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="85.0" fitWidth="117.0" layoutX="776.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../imagenes/sb.jpg" />
-         </image>
-      </ImageView>
-      <Label layoutX="309.0" prefHeight="62.0" prefWidth="288.0" text="Administracion" textFill="#d9e806" underline="true">
-         <font>
-            <Font name="System Italic" size="42.0" />
-         </font>
-      </Label>
-      <TableView fx:id="table_clientes" layoutX="246.0" layoutY="105.0" onMouseClicked="#seleccionar" prefHeight="465.0" prefWidth="686.0">
-        <columns>
-          <TableColumn fx:id="col_id" prefWidth="54.0" text="id" />
-          <TableColumn fx:id="col_nombre" prefWidth="63.0" text="nombre" />
-            <TableColumn fx:id="col_ap" prefWidth="109.0" text="Apellido Paterno" />
-            <TableColumn fx:id="col_am" prefWidth="106.0" text="Apellido Materno" />
-            <TableColumn fx:id="col_edad" minWidth="6.0" prefWidth="41.0" text="Edad" />
-            <TableColumn fx:id="col_tel" prefWidth="69.0" text="Telefono" />
-            <TableColumn fx:id="col_inicio" prefWidth="49.0" text="Inicio" />
-            <TableColumn fx:id="col_vencimiento" prefWidth="87.0" text="Vencimiento" />
-            <TableColumn fx:id="col_comentario" prefWidth="100.0" text="\$Cantidad" />
-            <TableColumn fx:id="col_foto_usuario" minWidth="4.0" prefWidth="4.0" text="foto" />
-        </columns>
-      </TableView>
-      <ImageView fx:id="usuario" fitHeight="69.0" fitWidth="85.0" layoutX="74.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../imagenes/user.jpg" />
-         </image>
-      </ImageView>
-      <TextField fx:id="tf_nombre" layoutX="29.0" layoutY="170.0" promptText="nombre" />
-      <TextField fx:id="tf_apellido_materno" layoutX="29.0" layoutY="212.0" promptText="Apellido Paterno" />
-      <TextField fx:id="tf_apellido_paterno" layoutX="29.0" layoutY="253.0" promptText="Apellido Materno" />
-      <TextField fx:id="tf_edad" layoutX="29.0" layoutY="291.0" promptText="Edad" />
-      <TextField fx:id="tf_telefono" layoutX="29.0" layoutY="338.0" promptText="Telefono" />
-      <DatePicker fx:id="inicio" layoutX="22.0" layoutY="377.0" promptText="fecha de inicio" />
-      <DatePicker fx:id="fin" layoutX="22.0" layoutY="418.0" promptText="fecha de vencimiento" />
-      <Button layoutX="109.0" layoutY="503.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="25.0" prefWidth="69.0" text="Eliminar" />
-      <Button layoutX="34.0" layoutY="503.0" mnemonicParsing="false" onAction="#editar" prefHeight="25.0" prefWidth="69.0" text="Editar" />
-      <TextField fx:id="tf_buscar" layoutX="247.0" layoutY="73.0" prefHeight="25.0" prefWidth="271.0" />
-      <Button layoutX="521.0" layoutY="73.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="76.0" text="Buscar" />
-      <TextField fx:id="ta_comentario" layoutX="35.0" layoutY="462.0" promptText="\$Cantidad" />
-      <Label fx:id="vNombre" layoutX="184.0" layoutY="174.0" text="Vacio" textFill="WHITE" visible="false" />
-      <Label fx:id="vApellidoP" layoutX="185.0" layoutY="216.0" text="Vacio" textFill="WHITE" visible="false" />
-      <Label fx:id="vApellidoM" layoutX="185.0" layoutY="257.0" text="Vacio" textFill="WHITE" visible="false" />
-      <Label fx:id="vEdad" layoutX="185.0" layoutY="295.0" text="Vacio" textFill="WHITE" visible="false" />
-      <Label fx:id="vTelefono" layoutX="186.0" layoutY="342.0" text="Vacio" textFill="WHITE" visible="false" />
-      <Label fx:id="vFechaI" layoutX="201.0" layoutY="381.0" text="Vacio" textFill="WHITE" visible="false" />
-      <Label fx:id="vFechaV" layoutX="201.0" layoutY="422.0" text="Vacio" textFill="WHITE" visible="false" />
-      <Label fx:id="vCantidad" layoutX="187.0" layoutY="466.0" text="Vacio" textFill="WHITE" visible="false" />
-      <Button layoutX="60.0" layoutY="545.0" mnemonicParsing="false" onAction="#cambiarFoto" text="Cambiar foto" />
-   </children>
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="699.0" prefWidth="1262.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sb.administrador.AdministradorController">
+   <top>
+      <GridPane prefHeight="156.0" prefWidth="854.0" style="-fx-background-color: #302F2F;" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="365.0" minWidth="10.0" prefWidth="229.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="582.0" minWidth="10.0" prefWidth="582.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../imagenes/sb.jpg" />
+               </image>
+            </ImageView>
+            <Label text="ADMINISTRACIÓN" textFill="#dfeb07" GridPane.columnIndex="1">
+               <font>
+                  <Font name="Agency FB Bold" size="73.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+   </top>
+   <left>
+      <GridPane prefHeight="515.0" prefWidth="260.0" style="-fx-background-color: #302F2F;" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="426.0" minHeight="10.0" prefHeight="418.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="203.0" minHeight="10.0" prefHeight="114.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <AnchorPane prefHeight="409.0" prefWidth="248.0">
+               <children>
+                  <ImageView fx:id="usuario" fitHeight="91.0" fitWidth="96.0" layoutX="82.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../imagenes/user.jpg" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="tf_nombre" layoutX="14.0" layoutY="111.0" opacity="0.89" prefHeight="25.0" prefWidth="182.0" promptText="Nombre del usuario" />
+                  <Label layoutX="14.0" layoutY="94.0" text="Nombre:" textFill="#e6f20b" />
+                  <TextField fx:id="tf_apellido_paterno" layoutX="14.0" layoutY="153.0" opacity="0.89" prefHeight="25.0" prefWidth="182.0" promptText="Apellido del usuario" />
+                  <Label layoutX="14.0" layoutY="136.0" text="Apellido paterno:" textFill="#e6f20b" />
+                  <Label layoutX="14.0" layoutY="178.0" text="Apellido materno:" textFill="#e6f20b" />
+                  <TextField fx:id="tf_apellido_materno" layoutX="14.0" layoutY="195.0" opacity="0.89" prefHeight="25.0" prefWidth="182.0" promptText="Apellido del usuario" />
+                  <Label layoutX="14.0" layoutY="220.0" text="Telefono:" textFill="#e6f20b" />
+                  <TextField fx:id="tf_telefono" layoutX="14.0" layoutY="237.0" opacity="0.89" prefHeight="25.0" prefWidth="182.0" promptText="Número celular" />
+                  <Label layoutX="14.0" layoutY="262.0" text="Edad:" textFill="#e6f20b" />
+                  <DatePicker layoutX="13.0" layoutY="321.0" prefHeight="25.0" prefWidth="184.0" promptText="Fecha inicio" />
+                  <TextField fx:id="tf_edad" layoutX="14.0" layoutY="279.0" opacity="0.89" prefHeight="25.0" prefWidth="182.0" promptText="Edad del usuario" />
+                  <Label layoutX="14.0" layoutY="304.0" text="Inicio de entrenamiento:" textFill="#e6f20b" />
+                  <Label layoutX="14.0" layoutY="346.0" text="Fin de entrenamiento:" textFill="#e6f20b" />
+                  <DatePicker layoutX="13.0" layoutY="363.0" prefHeight="25.0" prefWidth="184.0" promptText="Fecha de vencimiento" />
+                  <Label layoutX="14.0" layoutY="402.0" text="Total de pago:" textFill="#e6f20b" />
+                  <TextField fx:id="ta_comentario" layoutX="97.0" layoutY="398.0" opacity="0.89" prefHeight="25.0" prefWidth="104.0" promptText="\$000.00" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="94.0" prefWidth="260.0" GridPane.rowIndex="1">
+               <children>
+                  <Button layoutX="22.0" layoutY="22.0" mnemonicParsing="false" onAction="#editar" prefHeight="25.0" prefWidth="77.0" text="Editar" />
+                  <Button layoutX="155.0" layoutY="19.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="31.0" prefWidth="75.0" text="Eliminar" />
+                  <Button layoutX="67.0" layoutY="63.0" mnemonicParsing="false" onAction="#cambiarFoto" prefHeight="42.0" prefWidth="120.0" text="Cambiar Imagen" />
+               </children></AnchorPane>
+         </children>
+      </GridPane>
+   </left>
+   <center>
+      <GridPane prefHeight="515.0" prefWidth="614.0" style="-fx-background-color: #302F2F;" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="499.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="499.0" minHeight="10.0" prefHeight="486.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TableView fx:id="table_clientes" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+              <columns>
+                <TableColumn fx:id="col_id" prefWidth="30.0" text="ID" />
+                <TableColumn fx:id="col_nombre" prefWidth="130.0" text="NOMBRE" />
+                  <TableColumn fx:id="col_ap" prefWidth="163.0" text="APELLIDO" />
+                  <TableColumn fx:id="col_am" prefWidth="149.0" text="APELLIDO" />
+                  <TableColumn fx:id="col_edad" prefWidth="56.0" text="EDAD" />
+                  <TableColumn fx:id="col_tel" prefWidth="139.0" text="TELEFONO" />
+                  <TableColumn fx:id="col_inicio" prefWidth="122.0" text="INICIO" />
+                  <TableColumn fx:id="col_vencimiento" prefWidth="129.0" text="VENCIMIENTO" />
+                  <TableColumn fx:id="col_comentario" prefWidth="88.0" text="PAGO" />
+                  <TableColumn fx:id="col_foto_usuario" prefWidth="75.0" text="Column X" visible="false" />
+              </columns>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </TableView>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="7.0" text="Buscar por nombre:" textFill="#dfee04" />
+                  <TextField fx:id="tf_buscar" layoutX="130.0" layoutY="3.0" opacity="0.85" prefHeight="25.0" prefWidth="421.0" promptText="Buscar..." />
+               </children>
+            </AnchorPane>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>

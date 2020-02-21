@@ -1,5 +1,6 @@
 package sb.administrador;
 
+import java.awt.Color;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -11,6 +12,9 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 import java.util.function.Predicate;
@@ -26,6 +30,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -213,7 +218,7 @@ public class AdministradorController implements Initializable {
                 preparedStmt.setDate(7,Date.valueOf(f));
                 preparedStmt.setString(8,observacion);
                 preparedStmt.executeUpdate();      
-                connection.close();
+                
                 listita.setNombre(nombre);
                 listita.setApellido_paterno(paterno);
                 listita.setApellido_materno(materno);
@@ -239,6 +244,7 @@ public class AdministradorController implements Initializable {
         }else{
             new Alert(Alert.AlertType.ERROR, "Campos vacios!").show();
         }
+        //connection.close();
        
     }
     
@@ -262,7 +268,20 @@ public class AdministradorController implements Initializable {
     }
     
         
-    
+    public static int restar(String fecha, String fechaV){
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        java.util.Date fechaInicial = null;
+        java.util.Date fechaFinal = null;
+        try {
+            fechaInicial = dateFormat.parse(fecha);
+            fechaFinal = dateFormat.parse(fechaV);
+        } catch (ParseException ex) {
+            Logger.getLogger(AdministradorController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        int dias=(int) ((fechaFinal.getTime()-fechaInicial.getTime())/86400000);
+        System.out.println("Hay "+dias+" dias de diferencia");
+        return dias;
+    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -280,9 +299,16 @@ public class AdministradorController implements Initializable {
         try {
             ResultSet rs = connection.createStatement().executeQuery(
                     "select id,nombre,apellido_paterno,apellido_materno,edad,telefono,inicio,vencimiento,observaciones,foto from cliente"
-            );            
+            );
+            DateFormat ff = new SimpleDateFormat("YYYY-MM-dd");
+            String fecha = String.valueOf(ff.format(new java.util.Date()));
+            int[] total = new int[10000];
+            int cont = 0;
             while(rs.next()){
 //                OutputStream  out = new FileOutputStream
+                String fechaV = String.valueOf(rs.getDate("vencimiento"));
+                System.out.println("Fechav: "+fechaV);
+                System.out.println("FechaA: "+fecha);
                 lista.add(new Cliente(rs.getInt("id"),
                         rs.getString("nombre"),
                         rs.getString("apellido_paterno"),
@@ -292,8 +318,29 @@ public class AdministradorController implements Initializable {
                         rs.getDate("inicio"),
                         rs.getDate("vencimiento"), 
                         rs.getString("observaciones"), 
-                        rs.getBlob("foto")));                        
-            }                       
+                        rs.getBlob("foto")));
+                total[cont] = restar(fecha, fechaV);
+                //int tot = restar(fecha, fechaV);
+                cont++;
+                table_clientes.setRowFactory(tv -> new TableRow<Cliente>() {
+                @Override
+                public void updateItem(Cliente item, boolean empty) {
+                    super.updateItem(item, empty);
+                    //System.out.println(item.getFin());
+                    for (int i = 0; i < lista.size(); i++) {
+                        if (total[i]<=7) {
+                            System.out.println("rojo\n");
+                            setStyle("-fx-background-color: red;");
+                        } else {
+                            System.out.println("verde\n");
+                            setStyle("-fx-background-color: green;");
+                        }
+                    }
+                    }
+                });
+            }
+            
+            
             col_id.setCellValueFactory(new PropertyValueFactory<>("id"));
             col_nombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
             col_ap.setCellValueFactory(new PropertyValueFactory<>("apellido_paterno"));
