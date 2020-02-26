@@ -7,6 +7,9 @@ package sb;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.animation.FadeTransition;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -36,6 +39,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private TextField usuario;
     @FXML public ImageView admin;
+    
     
     
     @FXML public void admin() {

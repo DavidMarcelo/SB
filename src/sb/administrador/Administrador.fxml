@@ -59,22 +59,22 @@
                         <Image url="@../../imagenes/user.jpg" />
                      </image>
                   </ImageView>
-                  <TextField fx:id="tf_nombre" layoutX="14.0" layoutY="111.0" opacity="0.89" prefHeight="25.0" prefWidth="182.0" promptText="Nombre del usuario" />
+                  <TextField fx:id="tf_nombre" layoutX="14.0" layoutY="111.0" prefHeight="25.0" prefWidth="182.0" promptText="Nombre del usuario" />
                   <Label layoutX="14.0" layoutY="94.0" text="Nombre:" textFill="#e6f20b" />
-                  <TextField fx:id="tf_apellido_paterno" layoutX="14.0" layoutY="153.0" opacity="0.89" prefHeight="25.0" prefWidth="182.0" promptText="Apellido del usuario" />
+                  <TextField fx:id="tf_apellido_paterno" layoutX="14.0" layoutY="153.0" prefHeight="25.0" prefWidth="182.0" promptText="Apellido del usuario" />
                   <Label layoutX="14.0" layoutY="136.0" text="Apellido paterno:" textFill="#e6f20b" />
                   <Label layoutX="14.0" layoutY="178.0" text="Apellido materno:" textFill="#e6f20b" />
-                  <TextField fx:id="tf_apellido_materno" layoutX="14.0" layoutY="195.0" opacity="0.89" prefHeight="25.0" prefWidth="182.0" promptText="Apellido del usuario" />
+                  <TextField fx:id="tf_apellido_materno" layoutX="14.0" layoutY="195.0" prefHeight="25.0" prefWidth="182.0" promptText="Apellido del usuario" />
                   <Label layoutX="14.0" layoutY="220.0" text="Telefono:" textFill="#e6f20b" />
-                  <TextField fx:id="tf_telefono" layoutX="14.0" layoutY="237.0" opacity="0.89" prefHeight="25.0" prefWidth="182.0" promptText="Número celular" />
+                  <TextField fx:id="tf_telefono" layoutX="14.0" layoutY="237.0" prefHeight="25.0" prefWidth="182.0" promptText="Número celular" />
                   <Label layoutX="14.0" layoutY="262.0" text="Edad:" textFill="#e6f20b" />
-                  <DatePicker layoutX="13.0" layoutY="321.0" prefHeight="25.0" prefWidth="184.0" promptText="Fecha inicio" />
-                  <TextField fx:id="tf_edad" layoutX="14.0" layoutY="279.0" opacity="0.89" prefHeight="25.0" prefWidth="182.0" promptText="Edad del usuario" />
+                  <DatePicker fx:id="inicio" layoutX="13.0" layoutY="321.0" prefHeight="25.0" prefWidth="184.0" promptText="Fecha inicio" />
+                  <TextField fx:id="tf_edad" layoutX="14.0" layoutY="279.0" prefHeight="25.0" prefWidth="182.0" promptText="Edad del usuario" />
                   <Label layoutX="14.0" layoutY="304.0" text="Inicio de entrenamiento:" textFill="#e6f20b" />
                   <Label layoutX="14.0" layoutY="346.0" text="Fin de entrenamiento:" textFill="#e6f20b" />
-                  <DatePicker layoutX="13.0" layoutY="363.0" prefHeight="25.0" prefWidth="184.0" promptText="Fecha de vencimiento" />
+                  <DatePicker fx:id="fin" layoutX="13.0" layoutY="363.0" prefHeight="25.0" prefWidth="184.0" promptText="Fecha de vencimiento" />
                   <Label layoutX="14.0" layoutY="402.0" text="Total de pago:" textFill="#e6f20b" />
-                  <TextField fx:id="ta_comentario" layoutX="97.0" layoutY="398.0" opacity="0.89" prefHeight="25.0" prefWidth="104.0" promptText="\$000.00" />
+                  <TextField fx:id="ta_comentario" layoutX="97.0" layoutY="398.0" prefHeight="25.0" prefWidth="104.0" promptText="\$000.00" />
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="94.0" prefWidth="260.0" GridPane.rowIndex="1">
@@ -96,7 +96,7 @@
           <RowConstraints maxHeight="499.0" minHeight="10.0" prefHeight="486.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TableView fx:id="table_clientes" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+            <TableView fx:id="table_clientes" onMouseClicked="#seleccionar" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
               <columns>
                 <TableColumn fx:id="col_id" prefWidth="30.0" text="ID" />
                 <TableColumn fx:id="col_nombre" prefWidth="130.0" text="NOMBRE" />
@@ -123,7 +123,7 @@
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
                   <Label layoutX="14.0" layoutY="7.0" text="Buscar por nombre:" textFill="#dfee04" />
-                  <TextField fx:id="tf_buscar" layoutX="130.0" layoutY="3.0" opacity="0.85" prefHeight="25.0" prefWidth="421.0" promptText="Buscar..." />
+                  <TextField fx:id="tf_buscar" layoutX="130.0" layoutY="3.0" prefHeight="25.0" prefWidth="421.0" promptText="Buscar..." />
                </children>
             </AnchorPane>
          </children>

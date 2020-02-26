@@ -61,7 +61,7 @@ public class AdministradorController implements Initializable {
     
 //    ******************Datos********************************************
     public TextField tf_nombre,tf_apellido_materno,tf_apellido_paterno,tf_edad,tf_telefono,ta_comentario,tf_buscar;
-    public Label vNombre, vApellidoM, vApellidoP, vEdad, vTelefono, vCantidad, vFechaI,vFechaV;
+    //public Label vNombre, vApellidoM, vApellidoP, vEdad, vTelefono, vCantidad, vFechaI,vFechaV;
     public DatePicker inicio,fin;
     //public TextArea ta_comentario;
     Connection connection;
@@ -85,61 +85,61 @@ public class AdministradorController implements Initializable {
         //True para guardar informacion o modificar
         //False para no guardar, campos posiblemente vacios.
         if(inicio.getEditor().getText().equals("")){
-            vFechaI.setVisible(true);
+            //vFechaI.setVisible(true);
             bandera = false;
         }else{
-            vFechaI.setVisible(false);
+            //vFechaI.setVisible(false);
             bandera = true;
         }
         
         if(fin.getEditor().getText().equals("")){
-            vFechaV.setVisible(true);
+            //vFechaV.setVisible(true);
             bandera = false;
         }else{
-            vFechaV.setVisible(false);
+            //vFechaV.setVisible(false);
             bandera = true;
         }
         
         if (tf_nombre.getText().equals("")){
-            vNombre.setVisible(true);
+            //vNombre.setVisible(true);
             bandera = false;
         }else{
-            vNombre.setVisible(false);
+            //vNombre.setVisible(false);
             bandera = true;
         }
         if (tf_apellido_materno.getText().equals("")){
-            vApellidoM.setVisible(true);
+            //vApellidoM.setVisible(true);
             bandera = false;
         }else{
-            vApellidoM.setVisible(false);
+            //vApellidoM.setVisible(false);
             bandera = true;
         }
         if (tf_apellido_paterno.getText().equals("")){
-            vApellidoP.setVisible(true);
+            //vApellidoP.setVisible(true);
             bandera = false;
         }else{
-            vApellidoP.setVisible(false);
+            //vApellidoP.setVisible(false);
             bandera = true;
         }
         if (tf_edad.getText().equals("")){
-            vEdad.setVisible(true);
+            //vEdad.setVisible(true);
             bandera = false;
         }else{
-            vEdad.setVisible(false);
+            //vEdad.setVisible(false);
             bandera = true;
         }
         if (tf_telefono.getText().equals("")){
-            vTelefono.setVisible(true);
+            //vTelefono.setVisible(true);
             bandera = false;
         }else{
-            vTelefono.setVisible(false);
+            //vTelefono.setVisible(false);
             bandera = true;
         }
         if (ta_comentario.getText().equals("")){
-            vCantidad.setVisible(true);
+            //vCantidad.setVisible(true);
             bandera = false;
         }else{
-            vCantidad.setVisible(false);
+            //vCantidad.setVisible(false);
             bandera = true;
         }
         return bandera;
@@ -300,15 +300,15 @@ public class AdministradorController implements Initializable {
             ResultSet rs = connection.createStatement().executeQuery(
                     "select id,nombre,apellido_paterno,apellido_materno,edad,telefono,inicio,vencimiento,observaciones,foto from cliente"
             );
-            DateFormat ff = new SimpleDateFormat("YYYY-MM-dd");
+            /*DateFormat ff = new SimpleDateFormat("YYYY-MM-dd");
             String fecha = String.valueOf(ff.format(new java.util.Date()));
             int[] total = new int[10000];
-            int cont = 0;
+            int cont = 0;*/
             while(rs.next()){
 //                OutputStream  out = new FileOutputStream
-                String fechaV = String.valueOf(rs.getDate("vencimiento"));
-                System.out.println("Fechav: "+fechaV);
-                System.out.println("FechaA: "+fecha);
+                //String fechaV = String.valueOf(rs.getDate("vencimiento"));
+                //System.out.println("Fechav: "+fechaV);
+                //System.out.println("FechaA: "+fecha);
                 lista.add(new Cliente(rs.getInt("id"),
                         rs.getString("nombre"),
                         rs.getString("apellido_paterno"),
@@ -319,7 +319,7 @@ public class AdministradorController implements Initializable {
                         rs.getDate("vencimiento"), 
                         rs.getString("observaciones"), 
                         rs.getBlob("foto")));
-                total[cont] = restar(fecha, fechaV);
+                /*total[cont] = restar(fecha, fechaV);
                 //int tot = restar(fecha, fechaV);
                 cont++;
                 table_clientes.setRowFactory(tv -> new TableRow<Cliente>() {
@@ -337,7 +337,7 @@ public class AdministradorController implements Initializable {
                         }
                     }
                     }
-                });
+                });*/
             }
             
             

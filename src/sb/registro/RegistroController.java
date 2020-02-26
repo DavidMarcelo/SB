@@ -62,6 +62,7 @@ import sb.SQL.SQLConnection;
  *
  * @author L745
  */
+
 public class RegistroController implements Initializable {
 
     public TextField tf_nombre,tf_apellido_materno,tf_apellido_paterno,tf_edad,tf_telefono;
@@ -80,7 +81,7 @@ public class RegistroController implements Initializable {
     /*
     Validacion de los capos de texto
     */
-    public Label valNombre, valApellido, valApellido2, valEdad, valTelefono, valInicio, valVencimiento, valPago;
+    //public Label valNombre, valApellido, valApellido2, valEdad, valTelefono, valInicio, valVencimiento, valPago;
 
     public DPFPEnrollment Reclutador =
     DPFPGlobal.getEnrollmentFactory().createEnrollment();
@@ -99,75 +100,76 @@ public class RegistroController implements Initializable {
         boolean bandera;
         //Si es False no guardará nada en la base de datos.
         //Si es True guardara los archivos en la base de datos.
-        if (inicio.getEditor().getText().equals("")){
-            valInicio.setVisible(true);
+        String ini = inicio.getEditor().getText();
+        if (ini == ""){
+            //valInicio.setVisible(true);
             bandera = false;
         }else{
-            valInicio.setVisible(false);
+            //valInicio.setVisible(false);
             bandera = true;
         }
-        
-        if (fin.getEditor().getText().equals("")){
-            valVencimiento.setVisible(true);
+        String fi = fin.getEditor().getText();
+        if (fi == ""){
+            //valVencimiento.setVisible(true);
             bandera = false;
         }else{
-            valVencimiento.setVisible(false);
+            //valVencimiento.setVisible(false);
             bandera = true;
         }
         
         if (tf_nombre.getText().equals("")){
-            valNombre.setVisible(true);
+            //valNombre.setVisible(true);
             bandera = false;
         }else{
-            valNombre.setVisible(false);
+            //valNombre.setVisible(false);
             bandera = true;
         }
         
         if (tf_apellido_materno.getText().equals("")){
-            valApellido2.setVisible(true);
+            //valApellido2.setVisible(true);
             bandera = false;
         }else{
-            valApellido2.setVisible(false);
+            //valApellido2.setVisible(false);
             bandera = true;
         }
         
         if (tf_apellido_paterno.getText().equals("")){
-            valApellido.setVisible(true);
+            //valApellido.setVisible(true);
             bandera = false;
         }else{
-            valApellido.setVisible(false);
+            //valApellido.setVisible(false);
             bandera = true;
         }
         
         if (tf_edad.getText().equals("")){
-            valEdad.setVisible(true);
+            //valEdad.setVisible(true);
             bandera = false;
         }else{
-            valEdad.setVisible(false);
+            //valEdad.setVisible(false);
             bandera = true;
         }
         
         if (tf_telefono.getText().equals("")){
-            valTelefono.setVisible(true);
+            //valTelefono.setVisible(true);
             bandera = false;
         }else{
-            valTelefono.setVisible(false);
+            //valTelefono.setVisible(false);
             bandera = true;
         }
         
         if (observaciones.getText().equals("")){
-            valPago.setVisible(true);
+            //valPago.setVisible(true);
             bandera = false;
         }else{
-            valPago.setVisible(false);
+            //valPago.setVisible(false);
             bandera = true;
         }
         
-        if(usuario.equals(null)){
+        /*if(usuario.equals(null)){
             bandera = false;
         }else{
             bandera = true;
-        }
+        }*/
         
         return bandera;
     }

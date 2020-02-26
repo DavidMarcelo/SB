@@ -59,7 +59,7 @@ public class ReporteController implements Initializable {
     
     public void buscarHistorial(){
         if (buscar.getText().equals("")){
-            new Alert(Alert.AlertType.INFORMATION, "Agregar un nombre!").show();
+            new Alert(Alert.AlertType.INFORMATION, "Casilla vacia!").show();
         }else{
             try {
                 //Mostrar en una tabla

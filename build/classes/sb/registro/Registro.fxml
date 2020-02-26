@@ -1,142 +1,180 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.Blend?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="pane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #302F2F;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sb.registro.RegistroController">
-    <stylesheets>
-        <URL value="@registro.css" />
-    </stylesheets>
-   <children>
-      <ImageView fitHeight="93.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../imagenes/sb.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="93.0" fitWidth="106.0" layoutX="676.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../imagenes/sb.jpg" />
-         </image>
-      </ImageView>
-      <Label layoutX="324.0" prefHeight="53.0" prefWidth="130.0" text="Registro" textAlignment="CENTER" textFill="#f1f503" underline="true">
-         <font>
-            <Font name="System Italic" size="36.0" />
-         </font>
-      </Label>
-      <Pane layoutX="14.0" layoutY="167.0" prefHeight="74.0" prefWidth="200.0">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0" prefWidth="914.0" style="-fx-background-color: #302F2F;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sb.registro.RegistroController">
+   <top>
+      <GridPane prefHeight="171.0" prefWidth="900.0" style="-fx-background-color: #302F2F;" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="506.0" minWidth="10.0" prefWidth="272.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="642.0" minWidth="10.0" prefWidth="642.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+        </rowConstraints>
          <children>
-            <Label layoutX="57.0" layoutY="7.0" text="Nombre" textAlignment="CENTER" textFill="WHITE">
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../imagenes/sb.jpg" />
+               </image>
+            </ImageView>
+            <Label text="REGISTRO DE USUARIOS" textFill="#c7e106" GridPane.columnIndex="1">
                <font>
-                  <Font size="18.0" />
+                  <Font name="Agency FB Bold" size="50.0" />
                </font>
             </Label>
-            <TextField fx:id="tf_nombre" layoutY="34.0" prefHeight="25.0" prefWidth="200.0" promptText="Nombre">
-               <tooltip>
-                  <Tooltip text="Llenar campo de texto" />
-               </tooltip></TextField>
-            <Label fx:id="valNombre" layoutX="137.0" layoutY="12.0" prefHeight="17.0" prefWidth="51.0" text="Vacio" textFill="WHITE" visible="false" />
          </children>
-      </Pane>
-      <Pane layoutX="290.0" layoutY="167.0" prefHeight="74.0" prefWidth="200.0">
+      </GridPane>
+   </top>
+   <center>
+      <GridPane prefHeight="419.0" prefWidth="345.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="189.0" minHeight="10.0" prefHeight="185.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="100.0" minHeight="0.0" prefHeight="35.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="164.0" minHeight="9.0" prefHeight="29.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="164.0" minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="164.0" minHeight="10.0" prefHeight="32.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="164.0" minHeight="10.0" prefHeight="36.0" valignment="TOP" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="164.0" minHeight="10.0" prefHeight="32.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="171.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+        </rowConstraints>
          <children>
-            <Label layoutX="14.0" layoutY="7.0" prefHeight="27.0" prefWidth="137.0" text="Apellido Paterno" textAlignment="CENTER" textFill="WHITE">
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../imagenes/user.jpg" />
+               </image>
+            </ImageView>
+            <Label text="Seleccionar imagen de usuario." textFill="#dce806" GridPane.rowIndex="1">
                <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="tf_apellido_paterno" layoutY="34.0" prefHeight="25.0" prefWidth="200.0" promptText="Apellido Paterno" />
-            <Label fx:id="valApellido" layoutX="151.0" layoutY="12.0" text="Vacio" textFill="#fffafa" visible="false" />
-         </children>
-      </Pane>
-      <Pane layoutX="564.0" layoutY="167.0" prefHeight="74.0" prefWidth="200.0">
-         <children>
-            <Label layoutX="8.0" layoutY="7.0" text="Apellido Materno" textAlignment="CENTER" textFill="WHITE">
+            <Label text="Fecha de inicio del entrenamiento:" textFill="#dce806" GridPane.rowIndex="2">
                <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="tf_apellido_materno" layoutY="34.0" prefHeight="25.0" prefWidth="200.0" promptText="Apellido Materno" />
-            <Label fx:id="valApellido2" layoutX="149.0" layoutY="12.0" text="Vacio" textFill="WHITE" visible="false" />
-         </children>
-      </Pane>
-      <Pane layoutX="289.0" layoutY="242.0" prefHeight="74.0" prefWidth="200.0">
-         <children>
-            <Label layoutX="30.0" layoutY="1.0" text="Telefono" textAlignment="CENTER" textFill="WHITE">
+            <DatePicker fx:id="inicio" prefHeight="25.0" prefWidth="194.0" promptText="DD/MM/YYYY" GridPane.rowIndex="3" />
+            <DatePicker fx:id="fin" prefHeight="25.0" prefWidth="195.0" promptText="DD/MM/YYYY" GridPane.rowIndex="5" />
+            <Label text="Fecha de vencimiento:" textFill="#dce806" GridPane.rowIndex="4">
                <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="tf_telefono" layoutY="34.0" prefHeight="25.0" prefWidth="200.0" promptText="Telefono" />
-            <Label fx:id="valTelefono" layoutX="124.0" layoutY="6.0" text="Vacio" textFill="#fcfcfc" visible="false" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="usuario" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#image" pickOnBounds="true" preserveRatio="true" />
          </children>
-      </Pane>
-      <Pane layoutX="564.0" layoutY="242.0" prefHeight="74.0" prefWidth="200.0">
+      </GridPane>
+   </center>
+   <right>
+      <GridPane prefHeight="419.0" prefWidth="232.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="221.0" minWidth="10.0" prefWidth="204.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="110.0" minWidth="10.0" prefWidth="28.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="99.0" minHeight="10.0" prefHeight="28.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="136.0" minHeight="10.0" prefHeight="38.0" valignment="TOP" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="136.0" minHeight="10.0" prefHeight="24.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="139.0" minHeight="10.0" prefHeight="53.0" valignment="TOP" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="139.0" minHeight="10.0" prefHeight="27.0" valignment="TOP" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="200.0" minHeight="10.0" prefHeight="177.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="259.0" minHeight="10.0" prefHeight="74.0" vgrow="SOMETIMES" />
+        </rowConstraints>
          <children>
-            <Label layoutX="65.0" layoutY="1.0" text="Inicio" textAlignment="CENTER" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#insert" prefHeight="50.0" prefWidth="141.0" text="Guardar" textAlignment="CENTER" GridPane.rowIndex="6">
                <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <Blend mode="BLUE" />
+               </effect>
+            </Button>
+            <Label text="Teléfono:" textFill="#dce806">
+               <font>
+                  <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <DatePicker fx:id="inicio" layoutX="3.0" layoutY="32.0" prefHeight="27.0" prefWidth="194.0" promptText="Fecha de Inicio" />
-            <Label fx:id="valInicio" layoutX="137.0" layoutY="6.0" text="Vacio" textFill="WHITE" visible="false" />
-         </children>
-      </Pane>
-      <Button layoutX="320.0" layoutY="431.0" mnemonicParsing="false" onAction="#insert" prefHeight="43.0" prefWidth="139.0" text="Agregar" />
-      <Pane layoutX="14.0" layoutY="242.0" prefHeight="74.0" prefWidth="200.0">
-         <children>
-            <Label layoutX="71.0" layoutY="7.0" text="Edad" textAlignment="CENTER" textFill="WHITE">
+            <TextField fx:id="tf_telefono" alignment="CENTER" promptText="9610000000" GridPane.rowIndex="1" />
+            <Label text="Cantidad de pago:" textFill="#dce806" GridPane.rowIndex="2">
                <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
+            <Label text="Colocar huella:" textFill="#dce806" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
+            <ImageView fx:id="huella" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="5">
+               <image>
+                  <Image url="@../../imagenes/nueva_huella-removebg-preview.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="109.0" layoutY="139.0" text="S" />
+            <TextArea fx:id="observaciones" prefHeight="15.0" prefWidth="204.0" promptText="\$000.00" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+   </right>
+   <left>
+      <GridPane prefHeight="419.0" prefWidth="331.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="161.0" minWidth="10.0" prefWidth="35.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="304.0" minWidth="10.0" prefWidth="296.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="29.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="47.0" valignment="TOP" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="98.0" minHeight="10.0" prefHeight="40.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="107.0" minHeight="10.0" prefHeight="50.0" valignment="TOP" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="148.0" minHeight="10.0" prefHeight="41.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="144.0" minHeight="10.0" prefHeight="51.0" valignment="TOP" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="120.0" minHeight="10.0" prefHeight="39.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="112.0" minHeight="10.0" prefHeight="112.0" valignment="TOP" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Nombre de usuario:" textFill="#dce806" GridPane.columnIndex="1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="tf_edad" layoutY="34.0" prefHeight="25.0" prefWidth="200.0" promptText="Edad" />
-            <Label fx:id="valEdad" layoutX="132.0" layoutY="12.0" text="Vacio" textFill="WHITE" visible="false" />
-         </children>
-      </Pane>
-      <Pane layoutX="14.0" layoutY="335.0" prefHeight="74.0" prefWidth="200.0">
-         <children>
-            <Label layoutX="32.0" layoutY="1.0" text="Vencimiento" textAlignment="CENTER" textFill="WHITE">
+            <TextField fx:id="tf_nombre" promptText="Nombre" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="tf_apellido_paterno" promptText="Apellido" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="tf_apellido_materno" promptText="Apellido" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label text="Apellido paterno:" textFill="#dce806" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <DatePicker fx:id="fin" layoutY="26.0" prefHeight="27.0" prefWidth="200.0" promptText="Vencimiento" />
-            <Label fx:id="valVencimiento" layoutX="148.0" layoutY="6.0" text="Vacio" textFill="WHITE" visible="false" />
+            <Label text="Apellido materno:" textFill="#dce806" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label text="Edad del usuario:" textFill="#dce806" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tf_edad" promptText="Edad" GridPane.columnIndex="1" GridPane.rowIndex="7" />
          </children>
-      </Pane>
-      <ImageView fx:id="usuario" fitHeight="110.0" fitWidth="148.0" layoutX="334.0" layoutY="58.0" onMouseClicked="#image" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../imagenes/user.jpg" />
-         </image>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ImageView>
-      <ImageView fx:id="huella" fitHeight="65.0" fitWidth="86.0" layoutX="597.0" layoutY="345.0" pickOnBounds="true" preserveRatio="true">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <image>
-            <Image url="@../../imagenes/huella.jpg" />
-         </image>
-      </ImageView>
-      <TextArea fx:id="observaciones" layoutX="290.0" layoutY="362.0" prefHeight="33.0" prefWidth="224.0" promptText="\$Cantidad" />
-      <Label layoutX="369.0" layoutY="332.0" prefHeight="27.0" prefWidth="51.0" text="Pago" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="valPago" layoutX="420.0" layoutY="337.0" text="Vacio" textFill="WHITE" visible="false" />
-   </children>
-</AnchorPane>
+      </GridPane>
+   </left>
+</BorderPane>
