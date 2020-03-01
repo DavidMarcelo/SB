@@ -82,64 +82,13 @@ public class AdministradorController implements Initializable {
     //Funcion para validar campos de texto
     public boolean validar(){
         boolean bandera;
-        //True para guardar informacion o modificar
-        //False para no guardar, campos posiblemente vacios.
-        if(inicio.getEditor().getText().equals("")){
-            //vFechaI.setVisible(true);
+        String ini = inicio.getEditor().getText();
+        String fi = fin.getEditor().getText();
+        if(tf_nombre.getText().equals("") || tf_apellido_materno.getText().equals("") || ini.equals("") || fi.equals("")
+                || tf_apellido_paterno.getText().equals("") || tf_edad.getText().equals("") || tf_telefono.getText().equals("")
+                || ta_comentario.getText().equals("") || usuario.getImage()==null){
             bandera = false;
         }else{
-            //vFechaI.setVisible(false);
-            bandera = true;
-        }
-        
-        if(fin.getEditor().getText().equals("")){
-            //vFechaV.setVisible(true);
-            bandera = false;
-        }else{
-            //vFechaV.setVisible(false);
-            bandera = true;
-        }
-        
-        if (tf_nombre.getText().equals("")){
-            //vNombre.setVisible(true);
-            bandera = false;
-        }else{
-            //vNombre.setVisible(false);
-            bandera = true;
-        }
-        if (tf_apellido_materno.getText().equals("")){
-            //vApellidoM.setVisible(true);
-            bandera = false;
-        }else{
-            //vApellidoM.setVisible(false);
-            bandera = true;
-        }
-        if (tf_apellido_paterno.getText().equals("")){
-            //vApellidoP.setVisible(true);
-            bandera = false;
-        }else{
-            //vApellidoP.setVisible(false);
-            bandera = true;
-        }
-        if (tf_edad.getText().equals("")){
-            //vEdad.setVisible(true);
-            bandera = false;
-        }else{
-            //vEdad.setVisible(false);
-            bandera = true;
-        }
-        if (tf_telefono.getText().equals("")){
-            //vTelefono.setVisible(true);
-            bandera = false;
-        }else{
-            //vTelefono.setVisible(false);
-            bandera = true;
-        }
-        if (ta_comentario.getText().equals("")){
-            //vCantidad.setVisible(true);
-            bandera = false;
-        }else{
-            //vCantidad.setVisible(false);
             bandera = true;
         }
         return bandera;

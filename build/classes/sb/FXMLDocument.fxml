@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="785.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sb.FXMLDocumentController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="785.0" style="-fx-background-color: #302F2F;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sb.FXMLDocumentController">
    <center>
       <GridPane style="-fx-background-color: #302F2F;" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -31,7 +31,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" onMouseClicked="#cliente" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+            <ImageView fitHeight="121.0" fitWidth="130.0" onMouseClicked="#cliente" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
                <image>
                   <Image url="@../imagenes/agregar.png" />
                </image>
@@ -39,7 +39,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" onMouseClicked="#reporte" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+            <ImageView fitHeight="129.0" fitWidth="139.0" onMouseClicked="#reporte" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
                <image>
                   <Image url="@../imagenes/reporte.png" />
                </image>
@@ -47,7 +47,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" onMouseClicked="#verificacion" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
+            <ImageView fitHeight="153.0" fitWidth="200.0" onMouseClicked="#verificacion" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
                <image>
                   <Image url="@../imagenes/nueva_huella-removebg-preview.png" />
                </image>
@@ -58,23 +58,6 @@
          </children>
       </GridPane>
    </center>
-   <top>
-      <GridPane prefHeight="150.0" prefWidth="785.0" style="-fx-background-color: #302F2F;" BorderPane.alignment="CENTER">
-        <columnConstraints>
-          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../imagenes/sb.jpg" />
-               </image>
-            </ImageView>
-         </children>
-      </GridPane>
-   </top>
    <bottom>
       <GridPane prefHeight="106.0" prefWidth="785.0" style="-fx-background-color: #302F2F;" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -84,12 +67,19 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label prefHeight="97.0" prefWidth="343.0" text="BIENVENIDOS" textFill="#dae41b">
+            <Label prefHeight="97.0" prefWidth="325.0" text="BIENVENIDOS" textFill="#dae41b">
                <font>
-                  <Font size="55.0" />
+                  <Font name="Agency FB Bold" size="70.0" />
                </font>
             </Label>
          </children>
       </GridPane>
    </bottom>
+   <top>
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+         <image>
+            <Image url="@../imtra/sb.jpg" />
+         </image>
+      </ImageView>
+   </top>
 </BorderPane>

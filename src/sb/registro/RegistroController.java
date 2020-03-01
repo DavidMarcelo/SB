@@ -101,75 +101,14 @@ public class RegistroController implements Initializable {
         //Si es False no guardará nada en la base de datos.
         //Si es True guardara los archivos en la base de datos.
         String ini = inicio.getEditor().getText();
-        if (ini == ""){
-            //valInicio.setVisible(true);
-            bandera = false;
-        }else{
-            //valInicio.setVisible(false);
-            bandera = true;
-        }
         String fi = fin.getEditor().getText();
-        if (fi == ""){
-            //valVencimiento.setVisible(true);
+        if(tf_nombre.getText().equals("") || tf_apellido_materno.getText().equals("") || ini.equals("") || fi.equals("")
+                || tf_apellido_paterno.getText().equals("") || tf_edad.getText().equals("") || tf_telefono.getText().equals("")
+                || observaciones.getText().equals("") || usuario.getImage()==null || huella.getImage()==null){
             bandera = false;
         }else{
-            //valVencimiento.setVisible(false);
             bandera = true;
         }
-        
-        if (tf_nombre.getText().equals("")){
-            //valNombre.setVisible(true);
-            bandera = false;
-        }else{
-            //valNombre.setVisible(false);
-            bandera = true;
-        }
-        
-        if (tf_apellido_materno.getText().equals("")){
-            //valApellido2.setVisible(true);
-            bandera = false;
-        }else{
-            //valApellido2.setVisible(false);
-            bandera = true;
-        }
-        
-        if (tf_apellido_paterno.getText().equals("")){
-            //valApellido.setVisible(true);
-            bandera = false;
-        }else{
-            //valApellido.setVisible(false);
-            bandera = true;
-        }
-        
-        if (tf_edad.getText().equals("")){
-            //valEdad.setVisible(true);
-            bandera = false;
-        }else{
-            //valEdad.setVisible(false);
-            bandera = true;
-        }
-        
-        if (tf_telefono.getText().equals("")){
-            //valTelefono.setVisible(true);
-            bandera = false;
-        }else{
-            //valTelefono.setVisible(false);
-            bandera = true;
-        }
-        
-        if (observaciones.getText().equals("")){
-            //valPago.setVisible(true);
-            bandera = false;
-        }else{
-            //valPago.setVisible(false);
-            bandera = true;
-        }
-        
-        /*if(usuario.equals(null)){
-            bandera = false;
-        }else{
-            bandera = true;
-        }*/
         
         return bandera;
     }
