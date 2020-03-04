@@ -67,7 +67,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label prefHeight="97.0" prefWidth="325.0" text="BIENVENIDOS" textFill="#dae41b">
+            <Label alignment="CENTER" prefHeight="97.0" prefWidth="369.0" text="BIENVENIDOS" textAlignment="CENTER" textFill="#dae41b">
                <font>
                   <Font name="Agency FB Bold" size="70.0" />
                </font>
