@@ -69,7 +69,7 @@
          <children>
             <Label alignment="CENTER" prefHeight="97.0" prefWidth="369.0" text="BIENVENIDOS" textAlignment="CENTER" textFill="#dae41b">
                <font>
-                  <Font name="Agency FB Bold" size="70.0" />
+                  <Font name="Agency FB Bold" size="55.0" />
                </font>
             </Label>
          </children>

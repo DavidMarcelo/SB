@@ -67,13 +67,6 @@
    </center>
    <bottom>
       <BorderPane prefHeight="182.0" prefWidth="750.0" BorderPane.alignment="CENTER">
-         <top>
-            <Label text="BIENVENIDO" textFill="#dce806" visible="false" BorderPane.alignment="CENTER">
-               <font>
-                  <Font name="System Bold" size="35.0" />
-               </font>
-            </Label>
-         </top>
          <bottom>
             <Button fx:id="reinicio" mnemonicParsing="false" onAction="#reinicio" prefHeight="48.0" prefWidth="153.0" text="REINICIAR" visible="false" BorderPane.alignment="CENTER">
                <font>
@@ -82,7 +75,7 @@
             </Button>
          </bottom>
          <center>
-            <GridPane prefHeight="78.0" prefWidth="750.0" BorderPane.alignment="CENTER">
+            <GridPane prefHeight="83.0" prefWidth="674.0" BorderPane.alignment="CENTER">
               <columnConstraints>
                 <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="581.0" minWidth="10.0" prefWidth="335.0" />
               </columnConstraints>
