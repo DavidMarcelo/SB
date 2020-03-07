@@ -36,7 +36,7 @@
             </ImageView>
             <Label prefHeight="74.0" prefWidth="487.0" text="ADMINISTRACIÓN" textFill="#dfeb07" GridPane.columnIndex="1">
                <font>
-                  <Font name="Agency FB Bold" size="60.0" />
+                  <Font name="Agency FB Bold" size="50.0" />
                </font>
             </Label>
          </children>
