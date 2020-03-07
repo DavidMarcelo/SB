@@ -186,6 +186,7 @@ public class RegistroController implements Initializable {
         }else{//No guardar nada
             new Alert(Alert.AlertType.ERROR, "Campos vacios!").show();
         }
+        
     }
     
     @FXML

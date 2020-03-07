@@ -25,6 +25,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import sb.identificacion.IdentificacionController;
+import sb.registro.RegistroController;
 
 /**
  *
@@ -62,6 +63,12 @@ public class FXMLDocumentController implements Initializable {
             Parent root1 = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.setScene(new Scene(root1));  
+            stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+                @Override
+                public void handle(WindowEvent event) {
+                    RegistroController.lector.stopCapture();
+                }
+            });
             stage.show();
         } catch(Exception e) {
             e.printStackTrace();

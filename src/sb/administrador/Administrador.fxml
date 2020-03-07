@@ -34,9 +34,9 @@
                   <Image url="@../../imagenes/sb.jpg" />
                </image>
             </ImageView>
-            <Label text="ADMINISTRACIÓN" textFill="#dfeb07" GridPane.columnIndex="1">
+            <Label prefHeight="74.0" prefWidth="487.0" text="ADMINISTRACIÓN" textFill="#dfeb07" GridPane.columnIndex="1">
                <font>
-                  <Font name="Agency FB Bold" size="73.0" />
+                  <Font name="Agency FB Bold" size="60.0" />
                </font>
             </Label>
          </children>
