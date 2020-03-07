@@ -91,12 +91,12 @@
                 <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label fx:id="label_name" prefHeight="30.0" prefWidth="404.0" textFill="#dce806" visible="false">
+                  <Label fx:id="label_name" prefHeight="30.0" prefWidth="404.0" textFill="#dce806">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Label>
-                  <Label fx:id="label_end" prefHeight="30.0" prefWidth="327.0" textFill="#dce806" visible="false" GridPane.rowIndex="1">
+                  <Label fx:id="label_end" prefHeight="30.0" prefWidth="327.0" textFill="#dce806" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
